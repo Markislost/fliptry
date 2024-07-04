@@ -156,7 +156,7 @@ a{
 
 
 .site-name{
-    position: FIXED;
+    position: absolute;
     top: 1.6rem;
     left: 1.6rem;
     color: #fff;
@@ -201,7 +201,7 @@ a{
 }
 .header-links a:hover{
     background: #fff;
-    color: #F39827;
+    color: #7c6243;
 }
 .header-social-links{
     position: fixed;
@@ -263,27 +263,6 @@ a{
 
 
 /************** Text content on top of any image and background ***/
-.text{
-    margin-top: 70vh;
-    height: 120vh;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.text h1{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: left;
-    font-size: clamp(40px, 8vw + 1rem, 40px);
-}
-.text p{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    margin: 16px 0;
-    font-size: 16px;
-}
-
 .text1{
     height: 120vh;
     padding: 50px;
@@ -293,23 +272,233 @@ a{
     justify-content: center;
 }
 .text1 h1{
+    text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(50px, 7vw + 1rem, 100px);
+    font-size: clamp(20px, 6vw + 1rem, 800px);
 }
-.text p{
+.text1 p{
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     margin: 10px 0;
+    font-weight: 10px;
     font-size: 20px;
 }
 
 /************** End Text content on top of any image and background ***/
+/************** image slider **********************/
 
+.slider-wrapper {
+    position: relative;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+/* Slider container */
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+    
+    /* Hide scrollbar for webkit browsers */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.slider::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for webkit browsers */
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+/************** end image slider **********************/
+
+
+.container_video {
+    width: 80%;
+    margin: 80px auto;
+}
+
+.container_video h1 {
+    padding: 60px 0;
+    color: #000000;
+    font-size: 44px;
+    text-align: center;
+}
+
+.video_row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.video_col {
+    flex-basis: 50%;
+    min-width: 250px;
+}
+
+.feature_img {
+    width: 83%;
+    margin: auto;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.small-img-row {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on small screens */
+    background: #efefef;
+    margin: 20px 0;
+    align-items: center; /* Center items horizontally */
+    border-radius: 6px;
+    overflow: hidden;
+    width: 85%;
+}
+
+.small-img {
+    position: relative;
+}
+
+.small-img img {
+    width: 150px;
+}
+
+.small-img-row p {
+    margin: 10px 20px; /* Adjusted margin for better spacing */
+    color: #707070;
+    line-height: 22px;
+    font-size: 15px;
+    text-align: center; /* Center text on small screens */
+}
+
+.play-btn {
+    position: absolute;
+    width: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.small-img .play-btn {
+    width: 35px;
+}
+
+.video-player {
+    display: none;
+    position: fixed; /* Change to fixed or absolute based on your layout */
+    width: 100%;
+    height: 100%; /* Adjust height as needed */
+    background: rgba(0, 0, 0, 0.80); /* Semi-transparent background */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.video-player iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width as needed */
+    height: 80%; /* Adjust height as needed */
+    border: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the iframe */
+}
+
+/* Media Queries */
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+    .container_video {
+        width: 95%;
+    }
+
+    .video_row {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .video_col {
+        width: 100%; /* Full width for columns on small screens */
+        margin-bottom: 20px; /* Add spacing between columns */
+    }
+
+    .feature_img,
+    .small-img-row {
+        width: 100%; /* Full width for images and rows on small screens */
+    }
+
+    .small-img-row p {
+        margin: 10px 0; /* Adjusted margin for better spacing */
+    }
+
+    
+}
+
+/* Extra small screens (very narrow phones) */
+@media (max-width: 480px) {
+    .container_video {
+        width: 100%;
+    }
+
+    .small-img img {
+        width: 120px; /* Adjust image size for extra small screens */
+    }
+
+    .play-btn {
+        width: 40px; /* Adjust play button size for extra small screens */
+    }
+
+    .close-btn {
+        top: 5px;
+        right: 5px;
+        width: 25px; /* Adjust close button size for extra small screens */
+    }
+}
 
 
 
 /******************footer**************/
 footer{
+    margin-top: 100vh;
     position: relative;
     width: 100%;
     background: #F39827;
@@ -414,110 +603,135 @@ footer .wave#wave4{
     }
 }
 /******************END footer**************/
-
-
-/* Medium screens (tablets) */
+/* Tablets and smaller screens */
 @media (max-width: 1024px) {
-    .container-paralax1 {
-        margin-top: 40vh;
-        height: 50vh;
+    .container_video {
+        width: 90%;
     }
 }
 
-/* Small screens (large smartphones) */
+.btn-bars {
+    font-size: 0.9rem; /* Decrease font size for tablets */
+}
+
+
+/* Small tablets and mobile screens */
 @media (max-width: 768px) {
-    .container-paralax1 {
-        margin-top: 30vh;
-        height: 55vh;
-        background-attachment: scroll; /* Change to scroll if fixed background causes issues */
+    .container_video {
+        width: 95%;
+    }
+
+    .video-player {
+        background: rgba(0, 0, 0, 0.85); /* Darker background for smaller screens */
+    }
+
+    .video-player iframe {
+        width: 90%; /* Adjusted width for smaller screens */
+        height: 70%; /* Adjusted height for smaller screens */
+    }
+
+    .close-btn {
+        top: 5px;
+        right: 5px;
     }
 }
+    .btn-bars {
+        font-size: 0.85rem; /* Decrease font size for small tablets and mobile screens */
+    }
 
-/* Extra small screens (small smartphones) */
+
+/* Small smartphones (portrait and landscape) */
 @media (max-width: 480px) {
-    .container-paralax1 {
-        margin-top: 30vh;
-        height: 40vh;
-        background-attachment: scroll; /* Change to scroll if fixed background causes issues */
+    .container_video {
+        width: 100%;
     }
-}
-@media (max-width: 700px){
-    .Footer-nav ul{
-        flex-direction: column;
-    } 
-    .Footer-nav ul li{
-        width:100%;
-        text-align: center;
-        margin: 10px;
-    }
-    .footer_soc_icons a{
-        padding: 8px;
-        margin: 4px;
-    }
-}
-@media (max-width: 991px)
-{
-    .row .right .contentblog1{
-        padding-left: 0;
-    }
-}
-@media (max-width: 768px)
-{
-    .row{
-    width: 90%;
-    grid-template-columns: 1fr;
+
+    .video-player iframe {
+        width: 95%; /* Adjusted width for smallest screens */
+        height: 60%; /* Adjusted height for smallest screens */
     }
 }
 
 
+    .btn-bars {
+        font-size: 0.8rem; /* Decrease font size further for small smartphones */
+        padding: 0.3rem 0.7rem; /* Adjust padding for small smartphones */
+        margin: 1.2rem 1.2rem 0 0; /* Adjust margin for small smartphones */
+    }
 
-@media screen and (max-width: 400px){
-    .site-name{
+    
+
+
+/* Extra small screens (specifically very narrow phones) */
+@media screen and (max-width: 400px) {
+    .site-name {
         font-size: 1.8rem;
     }
-    .btn-bars{
+
+    .btn-bars {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
-    .navbar-collapse{
+
+    .navbar-collapse {
         width: 100%;
     }
-    .navbar-nav{
+
+    .navbar-nav {
         margin: 2rem 0;
     }
-    .header-wrapper h3{
+
+    .header-wrapper h3 {
         font-size: 0.9rem;
         text-align: center;
     }
-    .header-wrapper h1{
+
+    .header-wrapper h1 {
         text-align: center;
         font-weight: 500;
         font-size: 1rem;
         width: 100%;
     }
 
-    .header-links{
+    .header-links {
         flex-direction: column;
     }
 
-    .header-links a{
+    .header-links a {
         font-size: 0.8rem;
         margin: 0.3rem;
         text-align: center;
     }
 }
 
-@media screen and (min-width: 768px){
-    .header-social-links{
+.btn-bars {
+    font-size: 0.7rem; /* Further decrease font size for very narrow phones */
+    padding: 0.2rem 0.5rem; /* Further adjust padding for very narrow phones */
+    margin: 1rem 1rem 0 0; /* Further adjust margin for very narrow phones */
+}
+
+/* Larger screens */
+@media screen and (min-width: 768px) {
+    .header-social-links {
         display: block;
     }
 }
-@media screen and (min-width: 992px){
-    .header-wrapper{
+.header-social-links span {
+    right: 100%; /* Adjusted position for smaller screens */
+}
+
+
+/* Even larger screens */
+@media screen and (min-width: 992px) {
+    .header-wrapper {
         padding-left: 5rem;
     }
-    .header-wrapper h1{
+
+    .header-wrapper h1 {
         font-size: 2.5rem;
         width: 60%;
     }
 }
+
+
+
