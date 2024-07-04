@@ -2,34 +2,34 @@
 
 /************ Body CSS**************/
 
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
 }
 
-body {
+body{
     line-height: 1.3;
 }
 
-ul li {
+ul li{
     list-style-type: none;
 }
 
-button {
+button{
     outline: 0;
     cursor: pointer;
 }
 
-a {
+a{
     text-decoration: none;
     color: #000;
 }
 
-/*************************** Navigation Bar ****************************/
+/***************************      Navigation Bar      ****************************/
 
-.navbar {
+.navbar{
     color: #fff;
     position: fixed;
     top: 0;
@@ -37,32 +37,33 @@ a {
     z-index: 999;
 }
 
-.btn-bars {
+.btn-bars{
     background: #F39827;
     color: #fff;
     font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 3px;
+    color: #fff;
     border: none;
     padding: 0.4rem 0.9rem;
     border-radius: 3px;
     display: flex;
     align-items: center;
     margin: 1.6rem 1.6rem 0 0;
-    transition: all 0.4s ease;
+    transition: all 0.4s eases;
 }
 
-.btn-bars span {
+.btn-bars span{
     font-size: 1.6rem;
     padding-left: 1rem;
-}
-
-.btn-bars:hover {
     color: #fff;
 }
 
-/** Navigation background style **/
-.navbar-collapse {
+.btn-bars:hover{
+    color: #fff;
+}
+/**        Navigation backgournandd style         **/
+.navbar-collapse{
     position: fixed;
     top: 0;
     right: 0;
@@ -71,15 +72,15 @@ a {
     width: 280px;
     padding: 1.6rem;
     transform: translateX(100%);
-    transition: all 0.5s ease;
+    translate: all 0.5s ease;
 }
-
-.showMenu {
+/******************************************show menu***********************************/
+.showMenu{
     transform: translateX(0);
 }
-
-.btn-close {
+.btn-close{
     background: #F39827;
+    display: block;
     width: 33px;
     height: 33px;
     font-size: 1.6rem;
@@ -91,53 +92,53 @@ a {
     cursor: pointer;
     transition: color 0.5s ease;
 }
-
-.btn-close:hover {
+.btn-close-hover{
     color: #F39827;
 }
 
-.navbar-nav {
+.navbar-nav{
     margin: 6rem 0;
 }
-
-.nav-item a {
+.nav-item a{
     margin-top: 20px;
+    margin: 7.4rem 0;
 }
 
-.nav-link {
+.nav-link{
     color: #fff;
     font-family: 'Fira Sans', sans-serif;
     font-size: 1.3rem;
     transition: color 0.5s ease;
 }
-
-.nav-link:hover {
+.nav-link:hover{
     color: #F39827;
 }
 
-.nav-para p {
+/**************/
+.nav-para p{
     line-height: 1.6;
     font-size: 0.9rem;
     opacity: 0.7;
     font-weight: 300;
 }
-
-.nav-social-icons {
+.nav-social-icons{
     margin-top: 4rem;
     margin-right: 4rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
-
-.nav-social-icons a {
+/***color of social icons**/
+.nav-social-icons a{
     color: #fff;
 }
+/*********************end of Show menu************************/
 
-/*************************** Header ****************************/
+/*********************  Header   ************************/
 
-.header {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(assets/image/tyroneupsidedown.jpg) center/cover no-repeat;
-    height: 100vh;
+/*********************  position and style of the headers piture it also has a gradient  ************************/
+.header{
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    url(assets/image/tyroneupsidedown.jpg) center/cover no-repeat; height:100vh; 
     color: #fff;
     display: flex;
     align-items: center;
@@ -145,13 +146,17 @@ a {
     position: relative;
 }
 
-.header-wrapper {
-    padding: 0 1.6rem;
+.header-wrapper{
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
     width: 90%;
 }
 
-.site-name {
-    position: fixed;
+/*********************  this area is the site name and style wintessstories************************/
+
+
+.site-name{
+    position: FIXED;
     top: 1.6rem;
     left: 1.6rem;
     color: #fff;
@@ -159,33 +164,32 @@ a {
     font-size: 1.2rem;
     font-weight: 500;
 }
-
-.site-name img {
+.site-name img{
     width: 70px;
 }
-
-.site-name span {
+.site-name span{
     color: #F39827;
 }
-
-.header-wrapper h3 {
+.header-wrapper h3{
     font-family: 'Fira Sans', sans-serif;
     letter-spacing: 3px;
     opacity: 0.6;
 }
 
-.header-wrapper h1 {
-    margin: 1.2rem 0;
+.header-wrapper h1{
+    margin: 1.2rem 0; 
     font-size: 1.5rem;
     width: 80%;
 }
 
-.header-links {
+.header-links{
     display: flex;
 }
 
-.header-links a {
-    border: 2.5px solid #fff;
+
+/*********************  this area is the site name and style wintessstories************************/
+.header-links a{
+    border: 2.5px solid#fff;
     color: #fff;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -195,20 +199,17 @@ a {
     margin: 1rem 1rem 1rem 0;
     transition: all 0.5s ease;
 }
-
-.header-links a:hover {
+.header-links a:hover{
     background: #fff;
     color: #F39827;
 }
-
-.header-social-links {
+.header-social-links{
     position: fixed;
     right: 0;
     top: 40%;
     display: none;
 }
-
-.header-social-links a {
+.header-social-links a{
     color: #fff;
     display: block;
     margin: 1rem 2.4rem 1rem 0;
@@ -224,7 +225,7 @@ a {
     position: relative;
 }
 
-.header-social-links span {
+.header-social-links span{
     position: absolute;
     right: 150%;
     opacity: 0;
@@ -234,30 +235,56 @@ a {
     padding: 0.3rem 0.7rem;
     color: #ffffff;
 }
-
-.header-social-links a:hover span {
+.header-social-links a:hover span{
     opacity: 1;
 }
 
-/********************* Paralax Photo ************************/
+/****************end header*******************/
 
-.container-paralax1 {
+/******        Paralax photo            ******/
+.container-paralax1{
     margin-top: 50vh;
     width: 100%;
     height: 45vh;
     background-position: center;
-    background-size: cover;
+    background-size:cover ;
     background-image: url(assets/image/COVERFLIPLIFE.jpg);
     background-attachment: fixed;
+
     color: #f7f7f7;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/******       end Paralax photo         *******/
 
-/********************* Text Content ************************/
 
-.text, .text1 {
+
+
+
+/************** Text content on top of any image and background ***/
+.text{
+    margin-top: 70vh;
+    height: 120vh;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    font-size: clamp(40px, 8vw + 1rem, 40px);
+}
+.text p{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.text1{
     height: 120vh;
     padding: 50px;
     display: flex;
@@ -265,23 +292,24 @@ a {
     align-items: center;
     justify-content: center;
 }
-
-.text h1, .text1 h1 {
+.text1 h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(50px, 7vw + 1rem, 100px);
+}
+.text p{
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
-    font-size: clamp(40px, 8vw + 1rem, 40px);
+    margin: 10px 0;
+    font-size: 20px;
 }
 
-.text p, .text1 p {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    margin: 16px 0;
-    font-size: 16px;
-}
+/************** End Text content on top of any image and background ***/
 
-/********************* Footer ************************/
 
-footer {
+
+
+/******************footer**************/
+footer{
     position: relative;
     width: 100%;
     background: #F39827;
@@ -292,33 +320,32 @@ footer {
     align-items: center;
     flex-direction: column;
 }
-
-footer .footersocial_icons, .footer_menu {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
+footer .footersocial_icons,.footer_menu{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px 0;
+flex-wrap: wrap;
 }
 
-footer .footersocial_icons li, .footer_menu li {
+footer .footersocial_icons li,
+.footer_menu li{
     list-style: none;
 }
 
-footer .footersocial_icons li a {
+footer .footersocial_icons li a{
     font-size: 2rem;
     color: #f7f7f7;
     margin: 0 10px;
     display: inline-block;
-    transition: transform 0.5s;
+    transform: 0.5s;
 }
-
-footer .footersocial_icons li a:hover {
+footer .footersocial_icons li a:hover{
     transform: translateY(-10px);
 }
 
-.footer_menu li a {
+.footer_menu li a{
     font-size: 1.2rem;
     color: #f7f7f7;
     margin: 0 10px;
@@ -326,76 +353,68 @@ footer .footersocial_icons li a:hover {
     text-decoration: none;
     opacity: 0.75;
 }
-
-.footer_menu li a:hover {
+footer .footer_menu li a:hover{
     opacity: 1;
 }
-
-footer p {
+footer p{
     color: #f7f7f7;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
     font-size: 1.1em;
 }
-
-footer .wave {
+footer .wave{
     position: absolute;
     top: -100px;
     left: 0;
     width: 100%;
     height: 100px;
-    background: url(assets/image/wave3.png);
+    background: url(assets/image/wave5@2x.png);
     background-size: 1000px 100px;
 }
 
-footer .wave#wave1 {
+footer .wave#wave1{
     z-index: 1000;
     opacity: 1;
     bottom: 0;
     animation: animateWave 4s linear infinite;
 }
-
-footer .wave#wave2 {
+footer .wave#wave2{
     z-index: 999;
     opacity: 0.5;
     bottom: 10px;
     animation: animateWave_02 4s linear infinite;
 }
-
-footer .wave#wave3 {
+footer .wave#wave3{
     z-index: 1000;
     opacity: 0.2;
     bottom: 15px;
     animation: animateWave 3s linear infinite;
 }
-
-footer .wave#wave4 {
+footer .wave#wave4{
     z-index: 999;
     opacity: 0.7;
     bottom: 20px;
     animation: animateWave_02 3s linear infinite;
 }
-
-@keyframes animateWave {
-    0% {
+@keyframes animateWave{
+    0%{
         background-position-x: 1000px;
     }
-    100% {
+    100%{
         background-position-x: 0px;
     }
 }
-
-@keyframes animateWave_02 {
-    0% {
+@keyframes animateWave_02{
+    0%{
         background-position-x: 0px;
     }
-    100% {
+    100%{
         background-position-x: 1000px;
     }
 }
+/******************END footer**************/
 
-/*************************** Media Queries ****************************/
 
 /* Medium screens (tablets) */
 @media (max-width: 1024px) {
@@ -410,7 +429,7 @@ footer .wave#wave4 {
     .container-paralax1 {
         margin-top: 30vh;
         height: 55vh;
-        background-attachment: scroll;
+        background-attachment: scroll; /* Change to scroll if fixed background causes issues */
     }
 }
 
@@ -419,95 +438,86 @@ footer .wave#wave4 {
     .container-paralax1 {
         margin-top: 30vh;
         height: 40vh;
-        background-attachment: scroll;
+        background-attachment: scroll; /* Change to scroll if fixed background causes issues */
     }
+}
+@media (max-width: 700px){
+    .Footer-nav ul{
+        flex-direction: column;
+    } 
+    .Footer-nav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .footer_soc_icons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
+@media (max-width: 991px)
+{
+    .row .right .contentblog1{
+        padding-left: 0;
+    }
+}
+@media (max-width: 768px)
+{
+    .row{
+    width: 90%;
+    grid-template-columns: 1fr;
+    }
+}
 
-    .site-name {
+
+
+@media screen and (max-width: 400px){
+    .site-name{
         font-size: 1.8rem;
     }
-
-    .btn-bars {
+    .btn-bars{
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
-
-    .navbar-collapse {
+    .navbar-collapse{
         width: 100%;
     }
-
-    .navbar-nav {
+    .navbar-nav{
         margin: 2rem 0;
     }
-
-    .header-wrapper h3 {
+    .header-wrapper h3{
         font-size: 0.9rem;
         text-align: center;
     }
-
-    .header-wrapper h1 {
+    .header-wrapper h1{
         text-align: center;
         font-weight: 500;
         font-size: 1rem;
         width: 100%;
     }
 
-    .header-links {
+    .header-links{
         flex-direction: column;
     }
 
-    .header-links a {
+    .header-links a{
         font-size: 0.8rem;
         margin: 0.3rem;
         text-align: center;
     }
 }
 
-/* Show header social links on medium screens */
-@media screen and (min-width: 768px) {
-    .header-social-links {
+@media screen and (min-width: 768px){
+    .header-social-links{
         display: block;
     }
 }
-
-/* Adjustments for larger screens */
-@media screen and (min-width: 992px) {
-    .header-wrapper {
+@media screen and (min-width: 992px){
+    .header-wrapper{
         padding-left: 5rem;
     }
-
-    .header-wrapper h1 {
+    .header-wrapper h1{
         font-size: 2.5rem;
         width: 60%;
-    }
-}
-
-/* Footer adjustments */
-@media (max-width: 700px) {
-    .Footer-nav ul {
-        flex-direction: column;
-    }
-
-    .Footer-nav ul li {
-        width: 100%;
-        text-align: center;
-        margin: 10px;
-    }
-
-    .footer_soc_icons a {
-        padding: 8px;
-        margin: 4px;
-    }
-}
-
-@media (max-width: 991px) {
-    .row .right .contentblog1 {
-        padding-left: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .row {
-        width: 90%;
-        grid-template-columns: 1fr;
     }
 }
