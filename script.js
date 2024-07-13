@@ -2,9 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var videoPlayer = document.getElementById('videoPlayer');
     var iframe = document.getElementById('myVideo');
     var playButtons = document.querySelectorAll('.play-btn');
-    var showBtn = document.querySelector('.btn-bars');
-    var closeBtn = document.querySelector('.btn-close');
-    var navMenu = document.querySelector('.navbar-collapse');
+    var closeBtn = document.querySelector('.close-btn');
 
     playButtons.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -13,18 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    showBtn.addEventListener('click', function() {
-        navMenu.classList.add('showMenu');
-    });
-
-    closeBtn.addEventListener('click', function() {
-        navMenu.classList.remove('showMenu');
-    });
-
     function playVideo(videoUrl) {
         iframe.src = videoUrl + '&autoplay=1';
         videoPlayer.style.display = 'block';
     }
+
+    closeBtn.addEventListener('click', function() {
+        stopVideo();
+    });
 
     window.stopVideo = function() {
         iframe.src = '';
